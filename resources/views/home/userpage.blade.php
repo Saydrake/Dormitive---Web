@@ -83,7 +83,7 @@
                     <div class="col-12 mt-auto mb-5 text-center">
                         <small>Dreamers Presents</small>
 
-                        <h1 class="text-white mb-5">Dormitive</h1>
+                        <h1 class="text-white mb-5" style="color: #55b75e;">Dormitive</h1>
 
                     </div>
 
