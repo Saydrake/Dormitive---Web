@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+    <base href="/public">
+
+<style type="text/css">
+    .div_center{
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .font_size{
+        text-align: center;
+        font-size: 40px;
+        padding-bottom: 40px;
+    }
+    .text_color{
+        color: black;
+        padding-bottom: 20px;
+    }
+    label{
+        display: inline-block;
+        width: 150px;
+    }
+    .div_design{
+        padding-bottom: 15px;
+    }
+    </style>
 
 <head>
     <meta charset="utf-8">
@@ -65,6 +90,7 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{url('/view_room')}}" class="dropdown-item">Add Room</a>
                             <a href="{{url('/show_room')}}" class="dropdown-item">Show Room</a>
+                            <!-- <a href="element.html" class="dropdown-item">Other Elements</a> -->
                         </div>
                     </div>
                     
@@ -92,100 +118,66 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-               
+                
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                           
+                            
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                        
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                           
+                            
                         </div>
                     </div>
                     <x-app-layout>
                     </x-app-layout>
                 </div>
             </nav>
-            <!-- Navbar End -->
-
-
-
+           
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <!-- <th scope="col"><input class="form-check-input" type="checkbox"></th> -->
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Room</th>
-                                    <th scope="col">Customer</th>
-                                    <!-- <th scope="col">Amount</th>
-                                    <th scope="col">Status</th> -->
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <!-- <td><input class="form-check-input" type="checkbox"></td> -->
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jeth</td>
-                                    <!-- <td>$123</td>
-                                    <td>Paid</td> -->
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <!-- <td><input class="form-check-input" type="checkbox"></td> -->
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jeth</td>
-                                    <!-- <td>$123</td>
-                                    <td>Paid</td> -->
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <!-- <td><input class="form-check-input" type="checkbox"></td> -->
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jeth</td>
-                                    <!-- <td>$123</td>
-                                    <td>Paid</td> -->
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <!-- <td><input class="form-check-input" type="checkbox"></td> -->
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jeth</td>
-                                    <!-- <td>$123</td>
-                                    <td>Paid</td> -->
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <!-- <td><input class="form-check-input" type="checkbox"></td> -->
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jeth</td>
-                                    <!-- <td>$123</td>
-                                    <td>Paid</td> -->
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                
+
+            <div class="main-panel">
+                <div class="content-wrapper">
+                @if(session()->has('message'))
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                {{session()->get('message')}}
                 </div>
+                @endif
+            <div class="div_center">
+            <h1 class="font_size">Update Rooms</h1>
+            <form action="{{url('/update_room_confirm',$room->id)}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="div_design">
+            <label>Room Title:</label>
+            <input  class="text_color" type="text" name="title" placeholder="Write a title" required="" value="{{$room->title}}">
             </div>
+            <div class="div_design">
+            <label>Room Image:</label>
+            <input type="file" name="image" required="">
+            </div>
+            <div class="div_design">
+            <label>Room Description:</label>
+            <input  class="text_color" type="text" name="description" placeholder="Write a description" required="" value="{{$room->description}}">
+            </div>
+            <div class="div_design">
+            <label>Room Price:</label>
+            <input  class="text_color" type="number" name="price" placeholder="Write a price" required="" value="{{$room->price}}">
+            </div>
+            <div class="div_design">
+            <input type="submit" value="Update Room" class="btn btn-primary">
+            </div>
+            </form>
+            </div>
+            </div>
+            </div>
+
             <!-- Recent Sales End -->
 
 
@@ -197,14 +189,14 @@
                             </div>
                             
                             </div>
-                          
+                         
                             </div>
                         </div>
                     </div>
                    
                     </div>
                     <div class="col-sm-12 col-md-6 col-xl-4">
-                       
+                        
                             </div>
                            
                             </div>
@@ -224,13 +216,13 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right
+                        <div class="col-12 col-sm-6 text-center text-sm-start" >
+                            &copy; <a href="#">Dormitive</a>
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
                             Designed By: Dreamers</a>
                         </br>
-                        Created By: <a class="border-bottom"  target="_blank">Dormitive</a>
+                        Created By: <a  target="_blank">Dormitive</a>
                         </div>
                     </div>
                 </div>

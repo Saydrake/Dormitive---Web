@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class booking extends Model
+{
+    use HasFactory;
+
+    protected $fillable= [
+        'room_id',
+        'name',
+        'email',
+        'phone',
+        'startdate',
+        'enddate'
+    ];
+
+    public function room(){
+        return $this->hasOne('App\Models\Room', 'id', 'room_id');
+    }
+}

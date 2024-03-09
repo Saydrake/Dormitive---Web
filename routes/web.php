@@ -33,3 +33,11 @@ Route::get('/view_room', [AdminController::class,'view_room']);
 Route::post('/add_room', [AdminController::class,'add_room']);
 
 Route::get('/show_room', [AdminController::class,'show_room']);
+
+Route::get('/delete_room/{id}', [AdminController::class,'delete_room']);
+
+Route::get('/update_room/{id}', [AdminController::class,'update_room']);
+
+Route::post('/update_room_confirm/{id}', [AdminController::class,'update_room_confirm']);
+
+Route::get('/room_details/{$id}', [HomeController::class,'room_details']);
