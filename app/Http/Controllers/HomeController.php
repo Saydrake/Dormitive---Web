@@ -26,10 +26,11 @@ class HomeController extends Controller
     }
 }
 
-    public function room_details($id){
-        $room=Room::find($id);
-        return view('home.view_booking', compact('room'));
+    public function room_details($id) {
+        $room = Room::find($id);
+        return view('home.room_details', compact('room'));
     }
+
 
 public function checkEmailAvailability(Request $request){
     $email = $request->input('email');

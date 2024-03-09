@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+<base href="/public">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,8 +22,9 @@
     <link href="home/css/bootstrap-icons.css" rel="stylesheet">
 
     <link href="home/css/templatemo-festava-live.css" rel="stylesheet">
-</head>
 
+  
+</head>
 
 <body>
 
@@ -38,19 +39,19 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         <li class="nav-item">
-                            <a class="nav-link" href="#section_1">Home</a>
+                            <a class="nav-link" href="{{url('/')}}">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#section_2">About</a>
+                            <a class="nav-link" href="{{url('/')}}">About</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#section_3">Room</a>
+                            <a class="nav-link" href="{{url('/')}}">Room</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#section_4">Book</a>
+                            <a class="nav-link" href="{{url('/')}}">Book</a>
                         </li>
                         @if (Route::has('login'))
                         @auth
@@ -74,40 +75,7 @@
         </nav>
 
 
-        <section class="hero-section" id="section_1">
-            <div class="section-overlay"></div>
-
-            <div class="container d-flex justify-content-center align-items-center">
-                <div class="row">
-
-                    <div class="col-12 mt-auto mb-5 text-center">
-                        <small>Dreamers Presents</small>
-
-                        <h1 class="text-white mb-5">Dormitive</h1>
-
-                    </div>
-
-                    <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
-                        <div class="date-wrap">
-                          
-                        </div>
-
-                        <div class="location-wrap mx-auto py-3 py-lg-0">
-                            
-                        </div>
-
-                        <div class="social-share">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg_home">
-                <img src="home/images/haha.jpg" alt="Description of your image">
-            </div>
-
-        </section>
+        
 
 
         
@@ -118,10 +86,9 @@
                 <div class="row justify-content-center">
 
                     <div class="col-12 text-center">
-                        <h2 class="mb-4">Our Rooms</h1>
+                        <h2 class="mb-4" style="margin-top: 80px;">Our Rooms</h1>
                     </div>
 
-                        @foreach($room as $room)
                         <div class="col-lg-5 col-12">
                         <div class="artists-thumb">
                             <img src="room_img/{{$room->image}}"
@@ -142,63 +109,13 @@
                                     <strong>Price:</strong>
                                     {{ $room->price }}
                                 </p>
-                                <a class="btn btn-primary" href="{{ url('room_details', $room->id) }}" style="background-color: #55b75e; border-color: #55b75e;">View Room</a>
                             </div>
                         </div>
                     </div>
-                    @endforeach
                     
                 </div>
             </div>
         </section>
-
-        <section class="about-section section-padding" id="section_2">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
-                        <div class="services-info">
-                            <h2 class="text-white mb-4">About Us</h2>
-
-                            <p class="text-white">This project aims to develop a comprehensive dorm-booking system, providing users with a seamless
-                            and user-friendly platform to search, compare, and book accomodations. The system will offer a diverse range of 
-                            features to enhance the overall booking experience for both guests and dorm administrators.</p>
-
-                            <h6 class="text-white mt-4">Dorm info</h6>
-
-                            <p class="text-white">Thank you Thank you Thank you Thank you Thank you Thank you Thank you.</p>
-
-                            <h6 class="text-white mt-4">Other info</h6>
-
-                            <p class="text-white"> Thank you Thank you Thank you Thank you Thank you</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-12">
-                        <div class="about-text-wrap">
-                            <img src="home/images/bg2.jpg" class="about-image img-fluid">
-
-                            <!-- <div class="about-text-info d-flex">
-                                <div class="d-flex">
-                                    <i class="about-text-icon bi-person"></i>
-                                </div>
-
-
-                                <div class="ms-4">
-                                    <h3>a happy moment</h3>
-
-                                    <p class="mb-0">your amazing festival experience with us</p>
-                                </div>
-                            </div> -->
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-
 
 
         <section class="contact-section section-padding" id="section_4">
@@ -206,7 +123,7 @@
                 <div class="row">
 
                     <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4">Reserve/Book With Us</h2>
+                        <h2 class="text-center mb-4" style="margin-top: -80px;">Book with us</h2>
 
 
                         <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
