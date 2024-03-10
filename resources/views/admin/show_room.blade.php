@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<base href="/public">
 <style type="text/css">
     .center{
         margin: auto;

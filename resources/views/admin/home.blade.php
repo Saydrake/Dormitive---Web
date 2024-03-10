@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<base href="/public">
 <head>
     <meta charset="utf-8">
     <title>DORMITIVE ADMIN</title>

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+    <base href="/public">
 
 <head>
     <meta charset="utf-8">
