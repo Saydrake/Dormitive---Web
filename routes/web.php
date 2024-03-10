@@ -41,3 +41,5 @@ Route::get('/update_room/{id}', [AdminController::class,'update_room']);
 Route::post('/update_room_confirm/{id}', [AdminController::class,'update_room_confirm']);
 
 Route::get('/room_details/{id}', [HomeController::class, 'room_details']);
+
+route::post('/reservation/{id}',[HomeController::class,'reservation']);

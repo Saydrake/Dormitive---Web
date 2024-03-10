@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Room;
 use Illuminate\Support\Facades\Password;
 
@@ -15,6 +18,47 @@ class HomeController extends Controller
     return view('home.userpage', compact('room')); 
     }
 
+    
+    public function reservation(Request $request, $id){
+        $request->validate([
+            'checkin' => 'required|date',
+            'checkout'=> 'date|after:checkin',
+        ]);
+    
+        $checkin = $request->checkin;
+        $checkout = $request->checkout;
+    
+        $reserved = Reservation::where('room_id', $id)
+            ->where('checkin', '<=', $checkin)
+            ->where('checkout', '>=', $checkout)
+            ->exists();
+    
+        if ($reserved) {
+            return redirect()->back()->with('message', 'Room Already Booked. Please try a different date!');
+        }
+    
+        try {
+            DB::beginTransaction();
+    
+            $data = new Reservation;
+            $data->room_id = $id;
+            $data->name = $request->name;
+            $data->email = $request->email;
+            $data->phone = $request->phone;
+            $data->message = $request->message;
+            $data->checkin = $checkin;
+            $data->checkout = $checkout;
+            $data->save();
+    
+            DB::commit();
+    
+            return redirect()->back()->with('message', 'Room Booked Successfully!');
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->with('error', 'Failed to book room. Please try again later.');
+        }
+    }
+    
     public function redirect(){
         $usertype=auth::user()->usertype;
         if($usertype=='1'){
@@ -30,6 +74,8 @@ class HomeController extends Controller
         $room = Room::find($id);
         return view('home.room_details', compact('room'));
     }
+
+    
 
 
 public function checkEmailAvailability(Request $request){

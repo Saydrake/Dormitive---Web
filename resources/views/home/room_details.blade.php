@@ -129,18 +129,19 @@
                         <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
                                 aria-labelledby="nav-ContactForm-tab">
-                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
+                                <form class="custom-form contact-form mb-5 mb-lg-0" action="{{url('reservation',$room->id)}}" method="post"
                                     role="form">
+                                    @csrf
                                     <div class="contact-form-body">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="text" name="contact-name" id="contact-name"
+                                                <input type="text" name="name" id="name"
                                                     class="form-control" placeholder="Full name" required>
                                             </div>
 
                                             <div class="col-lg-6 col-md-6 col-12">
-                                                <input type="text" name="contact-company" id="contact-company"
-                                                    pattern="[^ @]*@[^ @]*" class="form-control"
+                                                <input type="number" name="phone" id="phone"
+                                                     class="form-control"
                                                     placeholder="Phone number" required>
                                             </div>
                                         </div>
@@ -157,10 +158,10 @@
                                             </div>
                                         </div>
 
-                                        <input type="email" name="contact-email" id="contact-email"
+                                        <input type="email" name="email" id="email"
                                             class="form-control" placeholder="Email address" required>
 
-                                        <textarea name="contact-message" rows="3" class="form-control"
+                                        <textarea name="message" rows="3" class="form-control"
                                             id="contact-message" placeholder="Message"></textarea>
 
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">

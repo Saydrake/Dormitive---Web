@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    <base href="/public">
+<base href="/public">
 
 <head>
     <meta charset="utf-8">
@@ -105,7 +105,7 @@
             </div>
 
             <div class="bg_home">
-                <img src="home/images/haha.jpg" alt="Description of your image">
+                <img src="home/images/bg.jpg" alt="Description of your image">
             </div>
 
         </section>
