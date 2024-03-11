@@ -165,13 +165,15 @@
                             and user-friendly platform to search, compare, and book accomodations. The system will offer a diverse range of 
                             features to enhance the overall booking experience for both guests and dorm administrators.</p>
 
-                            <h6 class="text-white mt-4">Dorm info</h6>
+                            <h6 class="text-white mt-4"></h6>
 
-                            <p class="text-white">Thank you Thank you Thank you Thank you Thank you Thank you Thank you.</p>
+                            <p class="text-white">We take great satisfaction in creating a lively, welcoming community where residents 
+                                experience a sense of connection and belonging. Our multicultural neighborhood values uniqueness and 
+                                invites people to take on new challenges, work together on projects, and accept opposing viewpoints.</p>
 
-                            <h6 class="text-white mt-4">Other info</h6>
+                            <!-- <h6 class="text-white mt-4">Other info</h6>
 
-                            <p class="text-white"> Thank you Thank you Thank you Thank you Thank you</p>
+                            <p class="text-white"> Thank you Thank you Thank you Thank you Thank you</p> -->
                         </div>
                     </div>
 

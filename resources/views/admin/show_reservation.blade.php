@@ -74,18 +74,17 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <!-- <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> -->
+                    <!-- <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Rooms</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{url('/view_room')}}" class="dropdown-item">Add Room</a>
-                            <a href="{{url('/show_room')}}" class="dropdown-item ">Show Room</a>
+                            <a href="{{url('/show_room')}}" class="dropdown-item">Show Room</a>
                         </div>
                     </div>
-                    <a href="{{url('myreservation')}}" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Reservation</a>
+                    <a href="{{url('myreservation')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Reservation</a>
                     <a href="{{url('userchart')}}" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>View Users</a>
 
-                   
                     <div class="nav-item dropdown">
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="signin.html" class="dropdown-item">Sign In</a>
@@ -140,31 +139,27 @@
                 
             <div class="main-panel">
             <div class="content-wrapper">
-            <h1 class="font_size">SHOW ROOMS</h1>
+            <h1 class="font_size">SHOW Reservation</h1>
              <table class="center">
                 <thread>
                 <tr>
-                    <th>Room Title</th>
-                    <th>Room Image</th>
-                    <th>Room Description</th>
-                    <th>Room Price</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>phone</th>
+                    <th>Messge</th>
+                    <th>Check In</th>
+                    <th>Check Out</th>
                 </tr>
                 </thread>
                 <tbody>
-                @foreach($room as $room)
+                @foreach($data as $data)
                 <tr>
-                    <td>{{$room->room_title}}</td>
-                    <td><img src="room_img/{{$room->image}}"></td>
-                    <td>{{$room->description}}</td>
-                    <td>{{$room->price}}</td>
-                    <td>
-                        <a class="btn btn-success" href="{{url('update_room', $room->id)}}">Update</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-danger" href="{{url('delete_room', $room->id)}}">Delete</a>
-                    </td>
+                    <td>{{$data->name}}</td>
+                    <td>{{$data->email}}</td>
+                    <td>{{$data->phone}}</td>
+                    <td>{{$data->message}}</td>
+                    <td>{{$data->checkin}}</td>
+                    <td>{{$data->checkout}}</td>
                 </tr>
                 @endforeach
             </tbody>

@@ -294,19 +294,19 @@
 
                     <ul class="site-footer-links">
                         <li class="site-footer-link-item">
-                            <a href="#section_1" class="site-footer-link">Home</a>
+                            <a href="{{url('/')}}" class="site-footer-link">Home</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#section_2" class="site-footer-link">About</a>
+                            <a href="{{url('/')}}" class="site-footer-link">About</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#section_3" class="site-footer-link">Rooms</a>
+                            <a href="{{url('/')}}" class="site-footer-link">Rooms</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#section_4" class="site-footer-link">Contact</a>
+                            <a href="{{url('/')}}4" class="site-footer-link">Book</a>
                         </li>
                     </ul>
                 </div>

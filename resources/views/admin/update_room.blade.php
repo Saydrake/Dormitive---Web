@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <!-- <a href="index.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Rooms</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -93,6 +93,10 @@
                             <!-- <a href="element.html" class="dropdown-item">Other Elements</a> -->
                         </div>
                     </div>
+
+                    <a href="{{url('myreservation')}}" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Reservation</a>
+                    <a href="{{url('userchart')}}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>View Users</a>
+
                     
                     <div class="nav-item dropdown">
                         <div class="dropdown-menu bg-transparent border-0">

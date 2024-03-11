@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\Room;
 use Illuminate\Support\Facades\Password;
@@ -18,6 +19,25 @@ class HomeController extends Controller
     return view('home.userpage', compact('room')); 
     }
 
+    public function store(Request $request)
+    {
+        // Validate the request data
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8',
+        ]);
+
+        // Create a new user
+        $user = new User();
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
+        $user->password = Hash::make($validatedData['password']);
+        $user->save();
+
+        // Return a JSON response
+        return response()->json(['message' => 'User created successfully'], 201);
+    }
     
     public function reservation(Request $request, $id){
         $request->validate([
