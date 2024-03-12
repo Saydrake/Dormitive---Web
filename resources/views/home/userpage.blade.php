@@ -2,6 +2,7 @@
 <html lang="en">
 <base href="/public">
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +37,7 @@
 
                 
 
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         <li class="nav-item">
                             <a class="nav-link" href="#section_1">Home</a>
@@ -247,7 +248,7 @@
                                             class="form-control" placeholder="Email address" required>
 
                                         <textarea name="contact-message" rows="3" class="form-control"
-                                            id="contact-message" placeholder="Message"></textarea>
+                                            id="contact-message" placeholder="(include the room title) + Message"></textarea>
 
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
                                             <button type="submit" class="form-control">Book now</button>

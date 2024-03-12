@@ -5,7 +5,7 @@
     .center{
         margin: auto;
         width: 60%;
-        border: 2px solid #94d29a;
+        border: 2px solid #55b75e;
         text-align: center;
         margin-top: 40px;
     }
@@ -139,27 +139,27 @@
                 
             <div class="main-panel">
             <div class="content-wrapper">
-            <h1 class="font_size">SHOW Reservation</h1>
-             <table class="center">
+            <h1 class="font_size">Show Reservation</h1>
+             <table class="center"style="border-collapse: collapse; width: 100%; margin: auto;">
                 <thread>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>phone</th>
-                    <th>Messge</th>
-                    <th>Check In</th>
-                    <th>Check Out</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Name</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Email</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Phone</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Message</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Check In</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Check Out</th>
                 </tr>
                 </thread>
                 <tbody>
                 @foreach($data as $data)
                 <tr>
-                    <td>{{$data->name}}</td>
-                    <td>{{$data->email}}</td>
-                    <td>{{$data->phone}}</td>
-                    <td>{{$data->message}}</td>
-                    <td>{{$data->checkin}}</td>
-                    <td>{{$data->checkout}}</td>
+                    <td style="padding: 0.5rem;">{{$data->name}}</td>
+                    <td style="padding: 0.5rem;">{{$data->email}}</td>
+                    <td style="padding: 0.5rem;">{{$data->phone}}</td>
+                    <td style="padding: 0.5rem;">{{$data->message}}</td>
+                    <td style="padding: 0.5rem;">{{$data->checkin}}</td>
+                    <td style="padding: 0.5rem;">{{$data->checkout}}</td>
                 </tr>
                 @endforeach
             </tbody>

@@ -5,7 +5,7 @@
     .center{
         margin: auto;
         width: 60%;
-        border: 2px solid #94d29a;
+        border: 2px solid #55b75e;
         text-align: center;
         margin-top: 40px;
     }
@@ -141,15 +141,15 @@
             <div class="main-panel">
             <div class="content-wrapper">
             <h1 class="font_size">SHOW ROOMS</h1>
-             <table class="center">
+             <table class="center" style="border-collapse: collapse; width: 100%; margin: auto;">
                 <thread>
                 <tr>
-                    <th>Room Title</th>
-                    <th>Room Image</th>
-                    <th>Room Description</th>
-                    <th>Room Price</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Room Title</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Room Image</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Room Description</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Room Price</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Update</th>
+                    <th style="padding: 0.5rem; background-color: #94d29a;">Delete</th>
                 </tr>
                 </thread>
                 <tbody>
